@@ -20,11 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.education.R
+import com.example.education.models.AppDetails
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
-    modifier: Modifier
+    modifier: Modifier,
+    onAppClick: (AppDetails) -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -39,7 +41,12 @@ fun MainScreen(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(apps){ app ->
-                AppListItem(app)
+                AppListItem(
+                    app,
+                    onAppClick = {
+                        onAppClick(app)
+                    }
+                )
             }
         }
     }

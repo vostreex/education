@@ -29,9 +29,11 @@ import com.example.education.models.Category
 @Composable
 fun AppListItem(
     app: AppDetails,
+    onAppClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
+        onClick = onAppClick,
         modifier = modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),

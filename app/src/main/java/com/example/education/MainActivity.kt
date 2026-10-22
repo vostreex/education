@@ -36,6 +36,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.education.navigation.RootNavHost
 import com.example.education.screens.MainScreen
 import com.example.education.ui.theme.EducationTheme
 
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity() {
             EducationTheme {
                 Scaffold(
                 ) { innerPadding ->
-                    MainScreen(
+                    RootNavHost(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
